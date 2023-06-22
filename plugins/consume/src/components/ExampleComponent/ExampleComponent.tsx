@@ -15,10 +15,10 @@ import { FormComponent } from '../FormComponent';
 
 export const ExampleComponent = () => (
   <Page themeId="tool">
-    <Header title="Welcome to Intverse!">
+    {/* <Header title="Welcome to Backstage!">
       <HeaderLabel label="Owner" value="Team Alpha" />
       <HeaderLabel label="Lifecycle" value="Experimental" />
-    </Header>
+    </Header> */}
     <Content>
       <ContentHeader title="Consume API plugin">
         <SupportButton>Experimental plugin</SupportButton>

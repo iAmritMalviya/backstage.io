@@ -51,8 +51,8 @@ export const FormComponent = () => {
                             </Grid>
 
                             <Grid item>
-                                <TextField id="outlined-basic" label="Application Name" variant="outlined" fullWidth />
-                                <FormHelperText>Give the application name</FormHelperText>
+                                <TextField id="outlined-basic" label="TPS" variant="outlined" fullWidth />
+                                <FormHelperText>TPS Generated?</FormHelperText>
                             </Grid>
 
                             <Grid item>
