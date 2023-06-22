@@ -55,7 +55,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
-
+import {ConsumePage} from '@internal/plugin-consume'
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -260,6 +260,16 @@ const apiPage = (
         </Grid>
       </Grid>
     </EntityLayout.Route>
+
+     <EntityLayout.Route path="/consume" title="Consume">
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <ConsumePage />
+        </Grid>
+      </Grid>
+    </EntityLayout.Route>
+
+    
   </EntityLayout>
 );
 

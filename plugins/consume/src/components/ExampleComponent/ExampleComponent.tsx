@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, FormControl } from '@material-ui/core';
 import {
   InfoCard,
   Header,
@@ -8,29 +8,33 @@ import {
   ContentHeader,
   HeaderLabel,
   SupportButton,
+  
 } from '@backstage/core-components';
-import { ExampleFetchComponent } from '../ExampleFetchComponent';
+import { FormComponent } from '../FormComponent';
+
 
 export const ExampleComponent = () => (
   <Page themeId="tool">
-    <Header title="Welcome to consume!" subtitle="Optional subtitle">
-      <HeaderLabel label="Owner" value="Team X" />
-      <HeaderLabel label="Lifecycle" value="Alpha" />
+    <Header title="Welcome to Intverse!">
+      <HeaderLabel label="Owner" value="Team Alpha" />
+      <HeaderLabel label="Lifecycle" value="Experimental" />
     </Header>
     <Content>
-      <ContentHeader title="Plugin title">
-        <SupportButton>A description of your plugin goes here.</SupportButton>
+      <ContentHeader title="Consume API plugin">
+        <SupportButton>Experimental plugin</SupportButton>
       </ContentHeader>
       <Grid container spacing={3} direction="column">
         <Grid item>
-          <InfoCard title="Information card">
+          <InfoCard title="Subscribe">
             <Typography variant="body1">
-              All content should be wrapped in a card like this.
+              Once after subscription, consumer will get API keys via email with their DL
             </Typography>
           </InfoCard>
         </Grid>
         <Grid item>
-          <ExampleFetchComponent />
+          <FormControl fullWidth>
+          <FormComponent />
+          </FormControl>
         </Grid>
       </Grid>
     </Content>
