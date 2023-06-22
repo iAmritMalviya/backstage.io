@@ -268,8 +268,6 @@ const apiPage = (
         </Grid>
       </Grid>
     </EntityLayout.Route>
-
-    
   </EntityLayout>
 );
 

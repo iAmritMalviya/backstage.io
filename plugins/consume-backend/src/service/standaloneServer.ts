@@ -21,6 +21,7 @@ export async function startStandaloneServer(
   let service = createServiceBuilder(module)
     .setPort(options.port)
     .addRouter('/consume', router);
+    
   if (options.enableCors) {
     service = service.enableCors({ origin: 'http://localhost:3000' });
   }
