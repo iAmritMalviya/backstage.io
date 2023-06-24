@@ -2,10 +2,13 @@ import { errorHandler } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
+import { createYAML } from './controllers/handleGithub';
 
 export interface RouterOptions {
   logger: Logger;
 }
+
+const baseURL = 'base';
 
 export async function createRouter(
   options: RouterOptions,
@@ -15,19 +18,18 @@ export async function createRouter(
   const router = Router();
   router.use(express.json());
 
-  router.get('/health', (_, response) => {
+  router.post('/health', (req, response) => {
+    console.log(req.body);
+    
     logger.info('PONG!');
     response.json({ status: 'ok' });
   });
 
   router.get('/', (_, response) => {
-    response.json({status: "hello"});
+    response.json({status: "Hey Bhanu, Its backend"});
   })
 
-  router.post('/', (_, response) => {
-    console.log(_.query)
-    response.json({msg: _.body});
-  })
+  router.post('/', createYAML(baseURL));
 
   router.use(errorHandler());
   return router;
