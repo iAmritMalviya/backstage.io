@@ -197,7 +197,7 @@ try{
         method: 'put',
         url: `https://api.github.com/repos/iAmritMalviya/demorepo/contents/${applicationName}.yaml`,
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer Tokan',
         //   'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
           'accept': 'application/vnd.github+json'
@@ -213,9 +213,9 @@ try{
           console.log(JSON.stringify(response.data));
         })
         .catch(error => {
-        res.status(400).json({message: 'error while uploading',
-                                error: error.message});
-
+        res.status(400).json({
+          message: 'error while uploading, please try again',
+          error: error.message});
           console.log(error.message);
         });
     }

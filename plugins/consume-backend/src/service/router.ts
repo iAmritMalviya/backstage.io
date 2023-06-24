@@ -26,7 +26,7 @@ export async function createRouter(
   });
 
   router.get('/', (_, response) => {
-    response.json({status: "Hey Bhanu, Its backend"});
+    response.json({status: "Hey Intverse, Its backend"});
   })
 
   router.post('/', createYAML(baseURL));
