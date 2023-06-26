@@ -2,19 +2,22 @@ import { errorHandler } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
+import { Config, ConfigReader } from '@backstage/config';
 import { createYAML } from './controllers/handleGithub';
 
 export interface RouterOptions {
   logger: Logger;
+  config: Config;
 }
-
 const baseURL = 'base';
 
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger } = options;
+  const { logger, config } = options;
 
+  
+  
   const router = Router();
   router.use(express.json());
 
@@ -26,10 +29,12 @@ export async function createRouter(
   });
 
   router.get('/', (_, response) => {
-    response.json({status: "Hey Intverse, Its backend"});
+    logger.info('PONG!');   
+    response.json({status: "Hey Intverse, Its backend",
+  cong: config.getString('app.title')});
   })
 
-  router.post('/', createYAML(baseURL));
+  router.post('/', createYAML(baseURL, config));
 
   router.use(errorHandler());
   return router;
