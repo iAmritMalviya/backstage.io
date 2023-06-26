@@ -32,6 +32,7 @@ import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import consume from './plugins/consume'
+import test from './plugins/test';
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
   const reader = UrlReaders.default({ logger: root, config });
@@ -86,6 +87,7 @@ async function main() {
   const searchEnv = useHotMemoize(module, () => createEnv('search'));
   const appEnv = useHotMemoize(module, () => createEnv('app'));
   const consumeEnv = useHotMemoize(module, () => createEnv('consume'));
+  const testEnv = useHotMemoize(module, () => createEnv('test'));
 
 
   const apiRouter = Router();
@@ -96,6 +98,7 @@ async function main() {
   apiRouter.use('/proxy', await proxy(proxyEnv));
   apiRouter.use('/search', await search(searchEnv));
   apiRouter.use('/consume', await consume(consumeEnv));
+  apiRouter.use('/test', await test(testEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
