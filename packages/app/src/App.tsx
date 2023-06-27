@@ -56,6 +56,7 @@ const app = createApp({
   },
 });
 
+
 const routes = (
   <FlatRoutes>
     <Route path="/" element={<Navigate to="catalog" />} />
@@ -81,6 +82,7 @@ const routes = (
       path="/tech-radar"
       element={<TechRadarPage width={1500} height={800} />}
     />
+   
     <Route
       path="/catalog-import"
       element={

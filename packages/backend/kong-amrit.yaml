@@ -1,0 +1,11 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongConsumer
+metadata:
+  name: amrit
+  annotations:
+    kubernetes.io/ingress.class: kong
+  tps: 214
+  usecase: for fun
+username: amrit
+credentials:
+  - companyone-key-auth
