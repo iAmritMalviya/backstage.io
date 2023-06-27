@@ -69,5 +69,7 @@ Congratulations! You have successfully created your first Backstage app and can 
 Backstage provides a powerful platform for developers and organizations to manage their projects and collaborate effectively. By following the steps outlined in this guide, you can set up your own Backstage app and leverage its features to enhance your development workflow. Enjoy using Backstage and take advantage of the vibrant community and ecosystem surrounding it!
 
 **Note** 
+
 If you are a complete beginner, you can follow this [documentation](https://backstage.spotify.com/learn/)
+
 and in this case, if you are familiar with documentation I would recommend this [documentation](https://backstage.io/docs/overview/what-is-backstage)
