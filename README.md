@@ -49,14 +49,21 @@ yarn dev
 ```
 Alternatively, if you want to start the frontend and backend separately in different terminals, you can use the following commands:
 
-arduino
-Copy code
+```bash
 yarn start       // For the frontend
+```
+
+```bash
 yarn start-backend  // For the backend
+```
+
 You can now access your Backstage app at the following URLs:
+
 Client-side: http://localhost:3000
+
 Backend: http://localhost:7007/api/your-plugin-name/
+
 Congratulations! You have successfully created your first Backstage app and can now start managing your tech documents, APIs, and software catalog through the Backstage developer portal.
 
-Conclusion
+**Conclusion**
 Backstage provides a powerful platform for developers and organizations to manage their projects and collaborate effectively. By following the steps outlined in this guide, you can set up your own Backstage app and leverage its features to enhance your development workflow. Enjoy using Backstage and take advantage of the vibrant community and ecosystem surrounding it!
