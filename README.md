@@ -24,6 +24,8 @@ While Backstage can be installed on any OS, it is recommended to use a Linux-bas
 Node.js: Install Node.js version 16 or 18. You can use a version manager like NVM to install and switch between different Node.js versions.
 Yarn: Install Yarn package manager using npm.
 
+Installation of the node using nvm: [Linux Users](./Node-installation-linux.md) 
+
 **Creating a Backstage App**
 
 To create your first Backstage app, follow these steps:
