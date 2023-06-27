@@ -3,10 +3,12 @@ import axios from 'axios';
 
 
 export const createYAML = (baseURL: any, config: any) => async (req: any, res: any) => {
+
  const githubConfig = config.get('integrations.github') 
  const token = githubConfig[0].token;
  const owner = 'iAmritMalviya';
  const repo = 'demorepo'; 
+ console.log("token", token);
  
 /*
  what things will require to create this:
@@ -15,7 +17,7 @@ export const createYAML = (baseURL: any, config: any) => async (req: any, res: a
  
  - config file
  - object to be created in yaml
-
+ - git data
  
 
 */
