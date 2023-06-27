@@ -1,4 +1,4 @@
-[![headline](docs/assets/headline.png)](https://backstage.io/)
+[![headline](https://backstage.io/assets/images/header-93351b4254863212ce2c149a2a5ea388.png)](https://backstage.io/)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CNCF Status](https://img.shields.io/badge/cncf%20status-incubation-blue.svg)](https://www.cncf.io/projects)
