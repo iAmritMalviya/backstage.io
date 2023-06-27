@@ -26,6 +26,8 @@ Yarn: Install Yarn package manager using npm.
 
 Installation of the node using nvm: [Linux Users](./Node-installation-linux.md) 
 
+For [Windows Users](./Node-Installation-Windows.md)
+
 **Creating a Backstage App**
 
 To create your first Backstage app, follow these steps:
