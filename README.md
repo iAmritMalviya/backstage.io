@@ -1,4 +1,16 @@
-# Backstage Developer Portal
+[![headline](docs/assets/headline.png)](https://backstage.io/)
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CNCF Status](https://img.shields.io/badge/cncf%20status-incubation-blue.svg)](https://www.cncf.io/projects)
+[![Main CI Build](https://github.com/backstage/backstage/workflows/Main%20Master%20Build/badge.svg)](https://github.com/backstage/backstage/actions?query=workflow%3A%22Main+Master+Build%22)
+[![Discord](https://img.shields.io/discord/687207715902193673)](https://discord.gg/backstage-687207715902193673)
+![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+[![Codecov](https://img.shields.io/codecov/c/github/backstage/backstage)](https://codecov.io/gh/backstage/backstage)
+[![](https://img.shields.io/github/v/release/backstage/backstage)](https://github.com/backstage/backstage/releases)
+[![Uffizzi](https://img.shields.io/endpoint?url=https%3A%2F%2Fapp.uffizzi.com%2Fapi%2Fv1%2Fpublic%2Fshields%2Fgithub.com%2Fbackstage%2Fbackstage)](https://app.uffizzi.com/ephemeral-environments/backstage/backstage)
+
+
+# [Backstage Developer Portal](https://backstage.io)
 
 Backstage is an open-source developer portal developed by Spotify and a large community of contributors. It provides a platform for developers and organizations to manage their technical documentation, APIs, software catalog, and more. This guide will walk you through the process of setting up Backstage and creating your first app.
 
