@@ -14,7 +14,7 @@ export const createYAML = (baseURL: any, config: any) => async (req: any, res: a
  options,
  
  - config file
- - 
+ - object to be created in yaml
 
  
 
