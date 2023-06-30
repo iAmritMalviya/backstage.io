@@ -2,7 +2,25 @@ import yaml from 'js-yaml';
 import axios from 'axios';
 
 
-export const createYAML = (baseURL: any) => async (req: any, res: any) => {
+export const createYAML = (baseURL: any, config: any) => async (req: any, res: any) => {
+
+ const githubConfig = config.get('integrations.github') 
+ const token = githubConfig[0].token;
+ const owner = 'iAmritMalviya';
+ const repo = 'demorepo'; 
+ console.log("token", token);
+ 
+/*
+ what things will require to create this:
+ 
+ options,
+ 
+ - config file
+ - object to be created in yaml
+ - git data
+ 
+
+*/
 
 try{
     const { applicationName, tps, useCase } = req.body;
@@ -24,7 +42,6 @@ try{
 
     const yamlDoc = yaml.dump(apiData)
 
-    // const fileContent = fs.readFileSync('./kong-amrit.yaml', 'utf8');
     const data = JSON.stringify({
         message: 'my commit message',
         committer: {
@@ -36,9 +53,9 @@ try{
       
       const config = {
         method: 'put',
-        url: `https://api.github.com/repos/iAmritMalviya/demorepo/contents/${applicationName}.yaml`,
+        url: `https://api.github.com/repos/${owner}/${repo}/contents/${applicationName}.yaml`,
         headers: {
-          'Authorization': 'Bearer Tokan',     
+          'Authorization': `Bearer ${token}`,     
           'Content-Type': 'application/json',
           'accept': 'application/vnd.github+json'
         },

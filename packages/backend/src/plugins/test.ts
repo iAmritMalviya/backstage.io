@@ -1,4 +1,4 @@
-import { createRouter } from '@internal/plugin-consume-backend';
+import { createRouter } from '@internal/plugin-test-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 

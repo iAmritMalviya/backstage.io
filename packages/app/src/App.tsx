@@ -34,6 +34,7 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { ConsumePage } from '@internal/plugin-consume';
+import { KafkadashboardPage } from '@internal/plugin-kafkadashboard';
 
 const app = createApp({
   apis,
@@ -97,6 +98,7 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/consume" element={<ConsumePage />} />
+    <Route path="/kafkadashboard" element={<KafkadashboardPage />} />
   </FlatRoutes>
 );
 
