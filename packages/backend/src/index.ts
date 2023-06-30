@@ -33,6 +33,8 @@ import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import consume from './plugins/consume'
 import test from './plugins/test';
+// import cors from 'cors'
+
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
   const reader = UrlReaders.default({ logger: root, config });
@@ -89,7 +91,8 @@ async function main() {
   const consumeEnv = useHotMemoize(module, () => createEnv('consume'));
   const testEnv = useHotMemoize(module, () => createEnv('test'));
 
-
+  console.log("proxyEnv", proxyEnv);
+  
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
   apiRouter.use('/scaffolder', await scaffolder(scaffolderEnv));
@@ -103,10 +106,25 @@ async function main() {
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
 
+  
+
+ 
+
   const service = createServiceBuilder(module)
     .loadConfig(config)
+    .enableCors({
+      origin: '*', // Specify the allowed origin(s) for CORS requests
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD'], // Specify the allowed HTTP methods
+      allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed request headers
+    })
+    // .addRouter('/proxy', await proxy(proxyEnv)) // experiments
+
     .addRouter('/api', apiRouter)
-    .addRouter('', await app(appEnv));
+    .addRouter('', await app(appEnv))
+    // .addRouter('/proxy', await proxy(proxyEnv));
+
+    console.log("service", service);
+    
 
   await service.start().catch(err => {
     console.log(err);

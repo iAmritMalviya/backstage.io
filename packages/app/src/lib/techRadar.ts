@@ -6,22 +6,11 @@ import {
   
   export class TechRadarConfigure implements TechRadarApi {
     async load(id: string | undefined): Promise<TechRadarLoaderResponse> {
-      // if needed id prop can be used to fetch the correct data        
-    //   const data = await fetch('./../techRadar.json').then(res => res.json());
-    // const data = require('../techRadar.json');
-      
-    // console.log("data", data);
-    
-
-
-    const rawData = await fetch('https://raw.githubusercontent.com/iAmritMalviya/backstage.io/master/packages/app/src/techRadar.json')
-    
-    const data = await rawData.json();
   
-        
-    console.log("data", data);
-    
-        
+      // in case if you have a json file, 
+  // const data = require('../techRadar.json');
+
+    const data = await fetch('https://raw.githubusercontent.com/iAmritMalviya/backstage.io/master/packages/app/src/techRadar.json').then(data => data.json())        
               
       // For example, this converts the timeline dates into date objects
       return {

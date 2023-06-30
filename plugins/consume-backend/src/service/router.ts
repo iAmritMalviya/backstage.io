@@ -7,6 +7,9 @@ import { createYAML } from './controllers/handleGithub';
 import yaml from 'js-yaml';
 import axios from 'axios';
 import Joi from 'joi';
+// import cors from 'cors';
+// const app = express()
+// app.use(cors());
 
 export interface RouterOptions {
   logger: Logger;
@@ -58,6 +61,7 @@ export const createGithubHandler = (
       reject(new Error('Length of the object should be greater than 0'));
       return;
     }
+    // more specifc error: fields shouldn't be empty
 
     const schema = Joi.object({
       apiVersion: Joi.string().required(),
@@ -73,6 +77,7 @@ export const createGithubHandler = (
       username: Joi.string().required(),
       credentials: Joi.array().items(Joi.string()).required(),
     }).unknown(true);
+
 
     const gitHubSchema = Joi.object({
       email: Joi.string().email().required(),
@@ -122,15 +127,6 @@ export const createGithubHandler = (
       },
       data: data,
     };
-
-    // const obj = {
-    //   requestConfig, 
-    //   gitHubCred, 
-    //   objectData
-    // }
-
-    // resolve(obj)
-    // return
 
     axios(requestConfig)
       .then(response => {

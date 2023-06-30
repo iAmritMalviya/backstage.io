@@ -27,6 +27,7 @@
     "@backstage/config": "^1.0.8",
     "@types/express": "*",
     "axios": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
     "joi": "^17.9.2",
