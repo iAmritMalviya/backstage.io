@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import {useNavigate} from @backstage/
 import { useFormik } from 'formik';
 import { Stepper, Box, StepLabel, Step, Button, Typography } from '@mui/material'
 import TopicForm from '../Forms/TopicForm';
@@ -6,10 +7,12 @@ import RequirementsForm from '../Forms/RequirementsForm';
 import ClusterAndConfigsForm from '../Forms/ClusterAndConfigsForm';
 import ProducerAndConsumerForm from '../Forms/ProducerAndConsumerForm';
 import ReviewAndSubmitForm from '../Forms/ReviewAndSubmit'
+import { OutlinedCard } from '../InputComponents/Inputs';
 const steps = ['Topic Form', 'Requirements Form', 'Cluster & Configs Form', 'Producer & Consumer Form', 'Review & Submit'];
-console.log('Stepper', Stepper)
+import { Page, Header, HeaderLabel } from '@backstage/core-components';
 export const MultiForm = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [visibility, setVisibility] = useState(false);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -19,9 +22,17 @@ export const MultiForm = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   }
 
+
   const handleReset = () => {
     setActiveStep(0);
   }
+ 
+
+  const navigateToRedPanda = () => {
+    window.location.href = '/redpanda';
+  };
+
+
 
   const formik = useFormik({
     initialValues: {
@@ -68,7 +79,11 @@ export const MultiForm = () => {
         consumergroupid: '',        
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // if(confirm('Are you sure?'))
+      // window.location.href = '/redpanda'
+      // alert(JSON.stringify(values, null, 2));
+      console.log(values)
+      setVisibility(true);
     },
   });
 
@@ -93,13 +108,17 @@ export const MultiForm = () => {
 
   return (
     <>
+    <Header title="Welcome to redpanda!" subtitle="Optional subtitle">
+      <HeaderLabel label="Owner" value="Team X" />
+      <HeaderLabel label="Lifecycle" value="Alpha" />
+    </Header>
       <Box sx={{ width: '100%', p: '3rem', border: '1px soldi white',
-    backgroundColor: 'midnightblue', }}>
-        <Button variant='outlined' sx={{marginBottom:'3rem'}}>Back to Home</Button>
+    }}>
+      {/* <Link component='button' variant="outlined" >Back</Link> */}
+        <Button variant='outlined' sx={{marginBottom:'3rem'}} onClick={() => navigateToRedPanda()}>Back to Home</Button>
         <Stepper activeStep={activeStep} sx={{marginBottom: '3rem'}}>
           {steps.map((label) => {
             const stepProps: { completed?: boolean } = {};
-            console.log('stepProps', stepProps)
             const labelProps: {
               optional?: React.ReactNode;
             } = {};
@@ -111,6 +130,15 @@ export const MultiForm = () => {
             );
           })}
         </Stepper>
+
+          <Box sx={{width: '40%', margin: '0 auto', zIndex: '1000',
+          position: 'fixed',
+          left: '40%',
+          transition: '0.3s all ease',
+          visibility: visibility  ? 'visible' : 'hidden',
+          top: '30%'}}>
+           <OutlinedCard />
+          </Box>
 
         {activeStep === steps.length ? (
           <>
@@ -128,9 +156,6 @@ export const MultiForm = () => {
             <form onSubmit={formik.handleSubmit}>
               {FormContent(activeStep)}
             </form>
-
-            {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
-
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
               <Button
                 color="inherit"
@@ -141,6 +166,7 @@ export const MultiForm = () => {
                 Back
               </Button>
               <Box sx={{ flex: '1 1 auto' }} />
+ 
 
               <Button onClick={() => { activeStep === steps.length - 1 ? formik.handleSubmit() : handleNext() }}>
                 {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
@@ -149,7 +175,34 @@ export const MultiForm = () => {
           </>
         )}
       </Box>     
+      
     </>
   );
 };
 
+
+
+{/* <Page themeId="tool">
+    <Header title="Welcome to redpanda!" subtitle="Optional subtitle">
+      <HeaderLabel label="Owner" value="Team X" />
+      <HeaderLabel label="Lifecycle" value="Alpha" />
+    </Header>
+    <Content>
+      <ContentHeader title="Plugin title">
+        <Button variant='contained' color='primary' onClick={() => window.location.href='/multiform'}>Create</Button>
+      </ContentHeader>
+      <Grid container spacing={3} direction="column">
+        <Grid item>
+          <InfoCard title="Information card">
+            <Typography variant="body1">
+              All content should be wrapped in a card like this.
+            </Typography>
+          </InfoCard>
+        </Grid>
+        <Grid item>
+          Table will come here
+                 {/* <MultiForm />    */}
+  //       </Grid>
+  //     </Grid>
+  //   </Content>
+  // </Page> */}

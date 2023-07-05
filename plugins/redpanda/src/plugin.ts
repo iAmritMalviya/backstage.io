@@ -1,6 +1,6 @@
 import { createPlugin, createRoutableExtension } from '@backstage/core-plugin-api';
 
-import { rootRouteRef } from './routes';
+import { rootRouteRef, MultiFormRouteRef } from './routes';
 
 export const redpandaPlugin = createPlugin({
   id: 'redpanda',
@@ -8,6 +8,14 @@ export const redpandaPlugin = createPlugin({
     root: rootRouteRef,
   },
 });
+
+// export const MultiFOrmPlugin = createPlugin({
+//   id: 'multiform',
+//   routes: {
+//     root: MultiFormRouteRef,
+//   },
+// });
+
 
 export const RedpandaPage = redpandaPlugin.provide(
   createRoutableExtension({
@@ -17,3 +25,13 @@ export const RedpandaPage = redpandaPlugin.provide(
     mountPoint: rootRouteRef,
   }),
 );
+
+export const MultiFormPage = redpandaPlugin.provide(
+  createRoutableExtension({
+    name: 'MultiFormPage',
+    component: () =>
+      import('./components/MultiForm').then(m => m.MultiForm),
+    mountPoint: MultiFormRouteRef,
+  }),
+);
+

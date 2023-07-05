@@ -1,5 +1,5 @@
-import React from "react"
-import { TextField, Grid, FormControl, InputLabel, Select, MenuItem, Table, TableContainer, TableRow, TableBody, TableCell, TableHead, Paper } from "@material-ui/core"
+import React, { useState, SyntheticEvent } from "react"
+import { TextField, Grid, FormControl, InputLabel, Select, MenuItem, Table, TableContainer, TableRow, TableBody, TableCell, TableHead, Paper, Tabs, Tab } from "@material-ui/core"
 
 
 
@@ -74,4 +74,57 @@ heading = heading.replace(/\b\w/g, function(word:string) {
             </TableContainer>
         </Grid>
     </>)
+}
+
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { TabContext } from "@material-ui/lab"
+import { MultiForm } from "../MultiForm"
+
+
+
+const card = (
+  <React.Fragment>
+    <CardContent>
+ 
+      <Typography align="center" variant="h5" component="div">
+       Form is submitted successfully
+      </Typography>     
+    </CardContent>
+    <CardActions>
+      <Button size="small" onClick={() => window.location.href = '/redpanda'}>Creae A new Form</Button>
+      
+    </CardActions>
+  </React.Fragment>
+);
+
+export function OutlinedCard() {
+  return (
+    <Box sx={{ minWidth: 275 }}>
+      <Card variant="outlined">{card}</Card>
+    </Box>
+  );
+}
+
+export function TabComp() {
+    const [value, setValue] = useState('1');
+
+    const handleChange = (event: React.SyntheticEvent<{}>, newValue: string) => {
+        setValue(newValue)
+    }
+    return(
+        <>
+     <Tabs value={value} onChange={handleChange} aria-label="Tabs">
+  <Tab value={1} label="Tab 1"  >
+  
+  </Tab>
+  <Tab value={2} label="Tab 2" />
+  <Tab value={3} label="Tab 3" />
+</Tabs>
+        </>
+    )
 }

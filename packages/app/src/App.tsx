@@ -35,7 +35,8 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { ConsumePage } from '@internal/plugin-consume';
 import { KafkadashboardPage } from '@internal/plugin-kafkadashboard';
-import { RedpandaPage } from '@internal/plugin-redpanda';
+import { RedpandaPage, MultiFormPage } from '@internal/plugin-redpanda';
+
 
 const app = createApp({
   apis,
@@ -101,6 +102,8 @@ const routes = (
     <Route path="/consume" element={<ConsumePage />} />
     <Route path="/kafkadashboard" element={<KafkadashboardPage />} />
     <Route path="/redpanda" element={<RedpandaPage />} />
+    <Route path="/multiform" element={<MultiFormPage />} />
+    
   </FlatRoutes>
 );
 

@@ -6,15 +6,15 @@ import {
   Page,
   Content,
   ContentHeader,
-  HeaderLabel,
-  SupportButton,
-  LinkButtonProps
+  HeaderLabel
 } from '@backstage/core-components';
-import { MultiForm } from '../MultiForm';
-import { useFormik } from 'formik';
+import { TabComp } from '../InputComponents/Inputs';
+
 
 
 export const Dashboard = () => (
+
+
   <Page themeId="tool">
     <Header title="Welcome to redpanda!" subtitle="Optional subtitle">
       <HeaderLabel label="Owner" value="Team X" />
@@ -22,7 +22,7 @@ export const Dashboard = () => (
     </Header>
     <Content>
       <ContentHeader title="Plugin title">
-        <Button variant='contained' color='primary'>Create</Button>
+        <Button variant='contained' color='primary' onClick={() => window.location.href='/multiform'}>Create</Button>
       </ContentHeader>
       <Grid container spacing={3} direction="column">
         <Grid item>
@@ -33,7 +33,9 @@ export const Dashboard = () => (
           </InfoCard>
         </Grid>
         <Grid item>
-                 <MultiForm />   
+          Table will come here
+          <TabComp />
+                 {/* <MultiForm />    */}
         </Grid>
       </Grid>
     </Content>

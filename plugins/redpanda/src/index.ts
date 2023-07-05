@@ -1,1 +1,1 @@
-export { redpandaPlugin, RedpandaPage } from './plugin';
+export { redpandaPlugin, RedpandaPage, MultiFormPage } from './plugin';
