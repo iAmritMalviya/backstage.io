@@ -33,6 +33,8 @@ import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import consume from './plugins/consume'
 import test from './plugins/test';
+import redpanda from './plugins/redpanda';
+
 // import cors from 'cors'
 
 function makeCreateEnv(config: Config) {
@@ -90,8 +92,8 @@ async function main() {
   const appEnv = useHotMemoize(module, () => createEnv('app'));
   const consumeEnv = useHotMemoize(module, () => createEnv('consume'));
   const testEnv = useHotMemoize(module, () => createEnv('test'));
+  const redpandaEnv = useHotMemoize(module, () => createEnv('redpanda'));
 
-  console.log("proxyEnv", proxyEnv);
   
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -102,7 +104,7 @@ async function main() {
   apiRouter.use('/search', await search(searchEnv));
   apiRouter.use('/consume', await consume(consumeEnv));
   apiRouter.use('/test', await test(testEnv));
-
+  apiRouter.use('/redpanda', await redpanda(redpandaEnv));
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
 

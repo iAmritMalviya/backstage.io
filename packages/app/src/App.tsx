@@ -27,7 +27,7 @@ import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 
-import { AlertDisplay, OAuthRequestDialog } from '@backstage/core-components';
+import { AlertDisplay, OAuthRequestDialog, SignInPage } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
@@ -36,10 +36,26 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { ConsumePage } from '@internal/plugin-consume';
 import { KafkadashboardPage } from '@internal/plugin-kafkadashboard';
 import { RedpandaPage, MultiFormPage } from '@internal/plugin-redpanda';
+import {githubAuthApiRef} from '@backstage/core-plugin-api';
+import { SignInProviderConfig } from '@backstage/core-components';
 
+const githubProvider: SignInProviderConfig = {
+  id: 'github-auth-provider',
+  title: 'GitHub',
+  message: 'Sign in using GitHub',
+  apiRef: githubAuthApiRef,
+}
 
 const app = createApp({
   apis,
+  components: {
+    SignInPage: props => (
+      <SignInPage {...props}
+      auto
+      provider={githubProvider}
+      />
+    ),
+  },
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
