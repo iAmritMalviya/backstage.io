@@ -47,11 +47,11 @@ const githubProvider: SignInProviderConfig = {
 }
 
 const app = createApp({
-  apis,
+  apis,  
   components: {
     SignInPage: props => (
       <SignInPage
-        {...props}        
+        {...props}
         providers={[
           'guest',
           {
@@ -59,11 +59,6 @@ const app = createApp({
             title: 'GitHub',
             message: 'Sign in using GitHub',
             apiRef: githubAuthApiRef,
-          },{
-            id: 'google-auth-provider',
-            title: 'Google',
-            message: 'Sign in using Google',
-            apiRef: googleAuthApiRef,
           },
         ]}
       />

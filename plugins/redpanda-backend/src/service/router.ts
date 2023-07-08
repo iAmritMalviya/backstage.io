@@ -27,6 +27,8 @@ const dbConfig = allConfig?.config?.data?.backend?.database;
 
 const baseUrl = allConfig?.config?.data?.backend?.baseUrl;
 
+console.log(allConfig?.config?.data?.integrations.github[0].token)
+
 const knex = require('knex')({
   ...dbConfig, debug: true,
 })
