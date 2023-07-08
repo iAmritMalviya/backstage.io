@@ -36,7 +36,7 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { ConsumePage } from '@internal/plugin-consume';
 import { KafkadashboardPage } from '@internal/plugin-kafkadashboard';
 import { RedpandaPage, MultiFormPage } from '@internal/plugin-redpanda';
-import {githubAuthApiRef} from '@backstage/core-plugin-api';
+import {githubAuthApiRef, googleAuthApiRef} from '@backstage/core-plugin-api';
 import { SignInProviderConfig } from '@backstage/core-components';
 
 const githubProvider: SignInProviderConfig = {
@@ -50,9 +50,22 @@ const app = createApp({
   apis,
   components: {
     SignInPage: props => (
-      <SignInPage {...props}
-      auto
-      provider={githubProvider}
+      <SignInPage
+        {...props}        
+        providers={[
+          'guest',
+          {
+            id: 'github-auth-provider',
+            title: 'GitHub',
+            message: 'Sign in using GitHub',
+            apiRef: githubAuthApiRef,
+          },{
+            id: 'google-auth-provider',
+            title: 'Google',
+            message: 'Sign in using Google',
+            apiRef: googleAuthApiRef,
+          },
+        ]}
       />
     ),
   },
