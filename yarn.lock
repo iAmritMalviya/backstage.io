@@ -3149,6 +3149,28 @@
     qs "^6.10.1"
     react-use "^17.2.4"
 
+"@backstage/plugin-permission-backend@^0.5.21":
+  version "0.5.21"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-backend/-/plugin-permission-backend-0.5.21.tgz#8f05113e66fc8ae1d5689fa600cac0b339d388e1"
+  integrity sha512-UNRNzonAF6+KpJVMp/z2NZQX029svrw1vI4sTkHT1tTvJoIcx2djIWu2CYV09sXPwW/4CvMnrlo5A+h6dy8TAw==
+  dependencies:
+    "@backstage/backend-common" "^0.19.0"
+    "@backstage/backend-plugin-api" "^0.5.3"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.0"
+    "@backstage/plugin-auth-node" "^0.2.15"
+    "@backstage/plugin-permission-common" "^0.7.6"
+    "@backstage/plugin-permission-node" "^0.7.9"
+    "@types/express" "*"
+    dataloader "^2.0.0"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    lodash "^4.17.21"
+    node-fetch "^2.6.7"
+    winston "^3.2.1"
+    yn "^4.0.0"
+    zod "^3.21.4"
+
 "@backstage/plugin-permission-common@^0.7.6":
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-common/-/plugin-permission-common-0.7.6.tgz#37dd8b0825704c6de1b9957166496bae45f2bec1"
@@ -6541,6 +6563,106 @@
   dependencies:
     tslib "^2.5.0"
 
+"@spotify/backstage-plugin-core-common@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-core-common/-/backstage-plugin-core-common-0.5.3.tgz#c47d2560b3e886bff9b2509afc9f5c55bf6b1905"
+  integrity sha512-TjExDlPg2aldfwlQ7S/Omkqk+Piv66AFdfJV3ztwSz5/bZcIVJ801M34OxKAsYE5zsp0Ux0Cs9YnJqq3E5UJcQ==
+
+"@spotify/backstage-plugin-core-node@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-core-node/-/backstage-plugin-core-node-0.6.3.tgz#c1962c546800c3df85644121607250e36c36ea76"
+  integrity sha512-esPaHb7hBc/Gl66JNsRCntHXcYfctU+yc8NOvRFyd+dIsMd0tOZi+4L84EfHq3D/5u65WSjnu0TLcrEgeZKI5Q==
+  dependencies:
+    "@backstage/backend-common" "^0.19.0"
+    "@backstage/config" "^1.0.8"
+    "@spotify/backstage-plugin-core-common" "^0.5.3"
+    cross-fetch "^3.1.5"
+    express "^4.17.1"
+    luxon "^3.1.1"
+
+"@spotify/backstage-plugin-core@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-core/-/backstage-plugin-core-0.5.3.tgz#b435168c92fefc25b4dbe409d9323fba6e5c2392"
+  integrity sha512-d9tyR2WUWb+4mpkYAC1DCTVWsj5Y6TVepJA7CoKiU310kca5Z4PRHZX+fV94xHuaJBh2akae67lp6v6I4HLQNA==
+  dependencies:
+    "@backstage/core-components" "^0.13.2"
+    "@backstage/core-plugin-api" "^1.5.2"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    "@spotify/backstage-plugin-core-common" "^0.5.3"
+    luxon "^3.1.1"
+    react-use "^17.2.4"
+    tiny-invariant "^1.3.1"
+
+"@spotify/backstage-plugin-rbac-backend@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-rbac-backend/-/backstage-plugin-rbac-backend-0.5.4.tgz#ff9dc93268c4b0439407560f694306012af72957"
+  integrity sha512-vdiqzIw/TvUgp6jDh+5Ea2118xDMiklKZLlv5MwoK3NMgcDBC07P6o0qArQN2yN7xBLYEwQpcprfQpYuPIC4gQ==
+  dependencies:
+    "@backstage/backend-common" "^0.19.0"
+    "@backstage/catalog-client" "^1.4.2"
+    "@backstage/catalog-model" "^1.4.0"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.0"
+    "@backstage/plugin-auth-node" "^0.2.15"
+    "@backstage/plugin-permission-common" "^0.7.6"
+    "@backstage/plugin-permission-node" "^0.7.9"
+    "@backstage/types" "^1.1.0"
+    "@spotify/backstage-plugin-core-node" "^0.6.3"
+    "@spotify/backstage-plugin-rbac-common" "^0.5.3"
+    "@types/express" "^4.17.6"
+    cross-fetch "^3.1.5"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    knex "^2.2.0"
+    uuid "^9.0.0"
+    winston "^3.2.1"
+    yn "^4.0.0"
+    zod "^3.20.0"
+
+"@spotify/backstage-plugin-rbac-common@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-rbac-common/-/backstage-plugin-rbac-common-0.5.3.tgz#7ef72aafa31943f12b83bc5567582d57c18d3a12"
+  integrity sha512-BMl7QN8CkdJqGYLO3N8RxKcS4v1btDV1U4cA4dv0h1P7JB3/OWMBFcwVuvrjJLoD0wUCsMKXl12eAI+0J+iP3w==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.0"
+    "@backstage/plugin-permission-common" "^0.7.6"
+    "@backstage/types" "^1.1.0"
+    uuid "^9.0.0"
+    zod "^3.20.0"
+
+"@spotify/backstage-plugin-rbac@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@spotify/backstage-plugin-rbac/-/backstage-plugin-rbac-0.5.4.tgz#88e2f398bb6fd5850dda7219d536dddbca94c3d9"
+  integrity sha512-IN8o+QJ8GxAJ+a1Q5OKM9joWfTX3hgpoSSUfQX//V1vHAdmZJdrBhSijZMnlYY7otrWCDeVX6iQT8fBnmk5yhg==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.0"
+    "@backstage/core-components" "^0.13.2"
+    "@backstage/core-plugin-api" "^1.5.2"
+    "@backstage/errors" "^1.2.0"
+    "@backstage/plugin-catalog-react" "^1.7.0"
+    "@backstage/plugin-permission-common" "^0.7.6"
+    "@backstage/plugin-permission-node" "^0.7.9"
+    "@backstage/plugin-permission-react" "^0.4.13"
+    "@backstage/theme" "^0.4.0"
+    "@backstage/types" "^1.1.0"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    "@spotify/backstage-plugin-core" "^0.5.3"
+    "@spotify/backstage-plugin-rbac-common" "^0.5.3"
+    ajv "^8.11.2"
+    file-saver "^2.0.5"
+    js-yaml "^4.1.0"
+    json-schema "^0.4.0"
+    lodash "^4.17.21"
+    luxon "^3.1.1"
+    react-use "^17.2.4"
+    uuid "^9.0.0"
+    vanilla-jsoneditor "^0.17.0"
+    zod "^3.20.0"
+    zod-to-json-schema "^3.20.2"
+
 "@spotify/eslint-config-base@^14.0.0":
   version "14.1.6"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-14.1.6.tgz#249b25ef683884e12aa0d10fc2783d9361e2890a"
@@ -7644,7 +7766,7 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@*", "@types/react-dom@<18.0.0":
+"@types/react-dom@*", "@types/react-dom@<18.0.0", "@types/react-dom@^17":
   version "17.0.20"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.20.tgz#e0c8901469d732b36d8473b40b679ad899da1b53"
   integrity sha512-4pzIjSxDueZZ90F52mU3aPoogkHIoSIDG+oQ+wQK7Cy2B9S+MvOqY0uEA/qawKz381qrEDkvpwyt8Bm31I8sbA==
@@ -8323,7 +8445,7 @@ ajv@^6.10.0, ajv@^6.10.1, ajv@^6.12.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5, aj
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.0.0, ajv@^8.10.0, ajv@^8.12.0, ajv@^8.9.0:
+ajv@^8.0.0, ajv@^8.10.0, ajv@^8.11.2, ajv@^8.12.0, ajv@^8.9.0:
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.12.0.tgz#d1a0527323e22f53562c567c00991577dfbe19d1"
   integrity sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==
@@ -8440,6 +8562,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@internal/plugin-redpanda" "^0.1.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
+    "@spotify/backstage-plugin-rbac" "^0.5.4"
     history "^5.0.0"
     react "^17.0.2"
     react-dom "^17.0.2"
@@ -12161,6 +12284,11 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
+file-saver@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
+  integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
+
 file-type@^16.5.4:
   version "16.5.4"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-16.5.4.tgz#474fb4f704bee427681f98dd390058a172a6c2fd"
@@ -15095,7 +15223,7 @@ kleur@^4.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
 
-knex@^2.0.0, knex@^2.3.0:
+knex@^2.0.0, knex@^2.2.0, knex@^2.3.0, knex@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/knex/-/knex-2.4.2.tgz#a34a289d38406dc19a0447a78eeaf2d16ebedd61"
   integrity sha512-tMI1M7a+xwHhPxjbl/H9K1kHX+VncEYcvCx5K00M16bWvpYPKAZd6QrCu68PtHAdIZNQPWZn0GVhqVBEthGWCg==
@@ -15565,7 +15693,7 @@ lunr@^2.3.9:
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.3.9.tgz#18b123142832337dd6e964df1a5a7707b25d35e1"
   integrity sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==
 
-luxon@^3.0.0, luxon@^3.2.1:
+luxon@^3.0.0, luxon@^3.1.1, luxon@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.3.0.tgz#d73ab5b5d2b49a461c47cedbc7e73309b4805b48"
   integrity sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==
@@ -17829,6 +17957,11 @@ pg-cloudflare@^1.1.0:
   resolved "https://registry.yarnpkg.com/pg-cloudflare/-/pg-cloudflare-1.1.0.tgz#833d70870d610d14bf9df7afb40e1cba310c17a0"
   integrity sha512-tGM8/s6frwuAIyRcJ6nWcIvd3+3NmUKIs6OjviIm1HPPFEt5MzQDOTBQyhPWg/m0kCl95M6gA1JaIXtS8KovOA==
 
+pg-cloudflare@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/pg-cloudflare/-/pg-cloudflare-1.1.1.tgz#e6d5833015b170e23ae819e8c5d7eaedb472ca98"
+  integrity sha512-xWPagP/4B6BgFO+EKz3JONXv3YDgvkbVrGw2mTo3D6tVDQRh1e7cqVGvyR3BE+eQgAvx1XhW/iEASj4/jCWl3Q==
+
 pg-connection-string@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.5.0.tgz#538cadd0f7e603fc09a12590f3b8a452c2c0cf34"
@@ -17839,6 +17972,11 @@ pg-connection-string@^2.6.0:
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.6.0.tgz#12a36cc4627df19c25cc1b9b736cc39ee1f73ae8"
   integrity sha512-x14ibktcwlHKoHxx9X3uTVW9zIGR41ZB6QNhHb21OPNdCCO3NaRnpJuwKIQSR4u+Yqjx4HCvy7Hh7VSy1U4dGg==
 
+pg-connection-string@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.6.1.tgz#78c23c21a35dd116f48e12e23c0965e8d9e2cbfb"
+  integrity sha512-w6ZzNu6oMmIzEAYVw+RLK0+nqHPt8K3ZnknKi+g48Ak2pr3dtljJW3o+D/n2zzCG07Zoe9VOX3aiKpj+BN0pjg==
+
 pg-int8@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
@@ -17848,6 +17986,11 @@ pg-pool@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-3.6.0.tgz#3190df3e4747a0d23e5e9e8045bcd99bda0a712e"
   integrity sha512-clFRf2ksqd+F497kWFyM21tMjeikn60oGDmqMT8UBrynEwVEX/5R5xd2sdvdo1cZCFlguORNpVuqxIj+aK4cfQ==
+
+pg-pool@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-3.6.1.tgz#5a902eda79a8d7e3c928b77abf776b3cb7d351f7"
+  integrity sha512-jizsIzhkIitxCGfPRzJn1ZdcosIt3pz9Sh3V01fm1vZnbnCMgmGl5wvGGdNN2EL9Rmb0EcFoCkixH4Pu+sP9Og==
 
 pg-protocol@^1.6.0:
   version "1.6.0"
@@ -17864,6 +18007,21 @@ pg-types@^2.1.0:
     postgres-bytea "~1.0.0"
     postgres-date "~1.0.4"
     postgres-interval "^1.1.0"
+
+pg@^8.11.1:
+  version "8.11.1"
+  resolved "https://registry.yarnpkg.com/pg/-/pg-8.11.1.tgz#297e0eb240306b1e9e4f55af8a3bae76ae4810b1"
+  integrity sha512-utdq2obft07MxaDg0zBJI+l/M3mBRfIpEN3iSemsz0G5F2/VXx+XzqF4oxrbIZXQxt2AZzIUzyVg/YM6xOP/WQ==
+  dependencies:
+    buffer-writer "2.0.0"
+    packet-reader "1.0.0"
+    pg-connection-string "^2.6.1"
+    pg-pool "^3.6.1"
+    pg-protocol "^1.6.0"
+    pg-types "^2.1.0"
+    pgpass "1.x"
+  optionalDependencies:
+    pg-cloudflare "^1.1.1"
 
 pg@^8.3.0:
   version "8.11.0"
@@ -21089,7 +21247,7 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiny-invariant@^1.0.6:
+tiny-invariant@^1.0.6, tiny-invariant@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
   integrity sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==
@@ -21886,6 +22044,11 @@ validate.io-number@^1.0.3:
   resolved "https://registry.yarnpkg.com/validate.io-number/-/validate.io-number-1.0.3.tgz#f63ffeda248bf28a67a8d48e0e3b461a1665baf8"
   integrity sha512-kRAyotcbNaSYoDnXvb4MHg/0a1egJdLwS6oJ38TJY7aw9n93Fl/3blIXdyYvPOp55CNxywooG/3BcrwNrBpcSg==
 
+vanilla-jsoneditor@^0.17.0:
+  version "0.17.8"
+  resolved "https://registry.yarnpkg.com/vanilla-jsoneditor/-/vanilla-jsoneditor-0.17.8.tgz#449ae39e986611e020df8a651fdf3f11329b2a84"
+  integrity sha512-DP9GP/IBQjYOnC820CYoFuXs3vgrL+zdGGp1X83qFirSkRWPeP+6zB/14a0LYhvomQNNezes5Gwel89MKc4Qbg==
+
 vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -22607,12 +22770,17 @@ zip-stream@^4.1.0:
     compress-commons "^4.1.0"
     readable-stream "^3.6.0"
 
+zod-to-json-schema@^3.20.2:
+  version "3.21.3"
+  resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.21.3.tgz#2ce40860570217979ad5c9734e2e2df717784859"
+  integrity sha512-09W/9oyxeF1/wWnzCb6MursW+lOzgKi91QwE7eTBbC+t/qgfuLsUVDai3lHemSQnQu/UONAcT/fv3ZnDvbTeKg==
+
 zod-to-json-schema@^3.20.4:
   version "3.21.2"
   resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.21.2.tgz#74dbbf97863c8b3f0576beb44e0af52382596fe4"
   integrity sha512-02yfKymfmIf2rM/5LYGlyw0daEel/f3MsSGMNJZWWf44ato+Y+diFugOpDtgvEUn3cYM5oDAGWW2NHeSD4mByw==
 
-zod@^3.21.4:
+zod@^3.20.0, zod@^3.21.4:
   version "3.21.4"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.21.4.tgz#10882231d992519f0a10b5dd58a38c9dabbb64db"
   integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==

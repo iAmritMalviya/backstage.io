@@ -45,7 +45,7 @@ export const FormComponent = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log('Response from server:', data);
+          
             setShowForm(false);
         setShowSuccessMsg(true);
         setShowLink(data.link);
