@@ -27,6 +27,15 @@ backend:
     credentials: true
   # This is for local development only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
+permission:
+  enabled: true
+  permissionedPlugins:
+   - catalog  
+  rbac:
+    authorizedUsers:
+      - group:default/admins
+      - user:default/alice
+      - user:default/bob
   database:   
     client: pg  
     connection:   
@@ -42,7 +51,7 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: 
+      token:     
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -68,6 +77,7 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: development
   providers:
     github:
       development:

@@ -4,6 +4,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import MapIcon from '@material-ui/icons/MyLocation';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
+import LockIcon from '@material-ui/icons/Lock'
+import StreamIcon from '@material-ui/icons/ViewStreamSharp'
+
 import CreateComponentIcon from '@material-ui/icons/AddCircleOutline';
 import LogoFull from './LogoFull';
 import LogoIcon from './LogoIcon';
@@ -26,6 +29,8 @@ import {
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { RBACSidebarItem } from '@spotify/backstage-plugin-rbac';
+
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -70,11 +75,14 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
         <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
         {/* <SidebarItem icon={LibraryBooks} to="KafkaDashboard" text="Kafka" /> */}
-        <SidebarItem icon={LibraryBooks} to="redpanda" text="RedPanda" />
+        <SidebarItem icon={StreamIcon} to="redpanda" text="RedPanda" />
+        <RBACSidebarItem text='rbac' icon={LockIcon} to="rbac"/>
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
           <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
+          <SidebarItem icon={LockIcon} to="rbac" text="RBAC" />
+
         </SidebarScrollWrapper>
       </SidebarGroup>
       <SidebarSpace />

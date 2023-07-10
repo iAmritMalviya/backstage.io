@@ -39,7 +39,7 @@ export default async function createPlugin(
         signIn: {
           resolver(_, ctx) {
             const userRef = 'user:default/guest'; // Must be a full entity reference
-            console.log("_, ctx", _, ctx);
+            // console.log("_, ctx", _, ctx);
             
 
             return ctx.issueToken({

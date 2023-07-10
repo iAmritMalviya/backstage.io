@@ -38,7 +38,7 @@ import { KafkadashboardPage } from '@internal/plugin-kafkadashboard';
 import { RedpandaPage, MultiFormPage } from '@internal/plugin-redpanda';
 import {githubAuthApiRef, googleAuthApiRef} from '@backstage/core-plugin-api';
 import { SignInProviderConfig } from '@backstage/core-components';
-
+import {RBACRoot} from '@spotify/backstage-plugin-rbac'
 const githubProvider: SignInProviderConfig = {
   id: 'github-auth-provider',
   title: 'GitHub',
@@ -126,6 +126,7 @@ const routes = (
     <Route path="/consume" element={<ConsumePage />} />
     <Route path="/kafkadashboard" element={<KafkadashboardPage />} />
     <Route path="/redpanda" element={<RedpandaPage />} />
+    <Route path="/rbac" element={<RBACRoot />} />
     <Route path="/multiform" element={<MultiFormPage />} />
     
   </FlatRoutes>

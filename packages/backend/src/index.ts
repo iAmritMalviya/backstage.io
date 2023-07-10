@@ -34,6 +34,8 @@ import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import consume from './plugins/consume'
 import test from './plugins/test';
 import redpanda from './plugins/redpanda';
+import permission from './plugins/permission';
+import rbac from './plugins/rbac';
 
 // import cors from 'cors'
 
@@ -43,7 +45,7 @@ function makeCreateEnv(config: Config) {
   const discovery = HostDiscovery.fromConfig(config);
   const cacheManager = CacheManager.fromConfig(config);
   const databaseManager = DatabaseManager.fromConfig(config, { logger: root });
-  const tokenManager = ServerTokenManager.noop();
+  const tokenManager = ServerTokenManager.fromConfig(config, {logger: root});
   const taskScheduler = TaskScheduler.fromConfig(config);
 
   const identity = DefaultIdentityClient.create({
@@ -93,6 +95,9 @@ async function main() {
   const consumeEnv = useHotMemoize(module, () => createEnv('consume'));
   const testEnv = useHotMemoize(module, () => createEnv('test'));
   const redpandaEnv = useHotMemoize(module, () => createEnv('redpanda'));
+  const permissionEnv = useHotMemoize(module, () => createEnv('permission'));
+  const rbacEnv = useHotMemoize(module, () => createEnv('rbac'));
+
 
   
   const apiRouter = Router();
@@ -105,6 +110,9 @@ async function main() {
   apiRouter.use('/consume', await consume(consumeEnv));
   apiRouter.use('/test', await test(testEnv));
   apiRouter.use('/redpanda', await redpanda(redpandaEnv));
+  apiRouter.use('/permission', await permission(permissionEnv));
+  apiRouter.use('/rbac', await permission(rbacEnv));
+
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
 
@@ -125,8 +133,6 @@ async function main() {
     .addRouter('', await app(appEnv))
     // .addRouter('/proxy', await proxy(proxyEnv));
 
-    console.log("service", service);
-    
 
   await service.start().catch(err => {
     console.log(err);

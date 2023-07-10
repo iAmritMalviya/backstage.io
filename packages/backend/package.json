@@ -37,6 +37,7 @@
     "@internal/plugin-consume-backend": "^0.1.0",
     "@internal/plugin-redpanda-backend": "^0.1.0",
     "@internal/plugin-test-backend": "^0.1.0",
+    "@spotify/backstage-plugin-rbac-backend": "^0.5.4",
     "app": "link:../app",
     "better-sqlite3": "^8.0.0",
     "cors": "^2.8.5",
