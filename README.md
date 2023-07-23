@@ -1,10 +1,9 @@
-# [Backstage](https://backstage.io)
+# The Packages Folder
 
-This is your newly scaffolded Backstage App, Good Luck!
+This is where your own applications and centrally managed libraries live, each
+in a separate folder of its own.
 
-To start the app, run:
-
-```sh
-yarn install
-yarn dev
-```
+From the start there's an `app` folder (for the frontend) and a `backend` folder
+(for the Node backend), but you can also add more modules in here that house
+your core additions and adaptations, such as themes, common React component
+libraries, utilities, and similar.
